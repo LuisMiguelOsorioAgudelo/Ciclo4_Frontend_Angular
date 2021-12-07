@@ -1,11 +1,26 @@
 <nav class="#00897b teal darken-1">
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">UBER</a>
+    
+    <a href="#" class="brand-logo">
+      <img class="responsive-img" width="60" src="http://pngimg.com/uploads/uber/uber_PNG24.png" alt="logo uber">
+    </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a routerLink="/admin/get">Administrador</a></li>
-      <li><a routerLink="/estaciones/get">Estaciones</a></li>
-      <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
-      <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
+      <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
+      <li *ngIf="activeSession"><a routerLink="/estaciones/get">Estaciones</a></li>
+      <li *ngIf="activeSession"><a routerLink="/rutas/get">Rutas</a></li>
+      <li *ngIf="activeSession"><a routerLink="/servicios/get">Servicios</a></li>
+      <li *ngIf="!activeSession"><a routerLink="/seguridad/login">
+        <i class="material-icons right">login</i>
+        Login
+      </a></li>
+      <li *ngIf="!activeSession"><a routerLink="/admin/create">
+        <i class="material-icons right">create</i>
+        Registrarse
+      </a></li>
+      <li *ngIf="activeSession"><a routerLink="/seguridad/logout">
+        <i class="material-icons right">logout</i>
+        Cerrar sesión
+      </a></li>
     </ul>
   </div>
 </nav>
